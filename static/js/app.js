@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (file.size > MAX_FILE_SIZE) {
             container.querySelector('.file-status').textContent = 'Too Large';
             container.querySelector('.file-status').classList.add('text-red-400');
-            container.dataset.error = 'File size exceeds 500MB limit';
+            container.dataset.error = `File size exceeds ${formatBytes(MAX_FILE_SIZE)} limit`;
         } else {
             container.querySelector('.file-status').textContent = 'Ready';
         }
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     reject(new Error('Network error during upload.'));
                 };
 
-                xhr.open('POST', 'https://cdn.verm.dev/v1/upload', true);
+                xhr.open('POST', 'https://cdn2.verm.dev/v1/upload', true);
                 xhr.send(formData);
             });
             
