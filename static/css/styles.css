@@ -1,0 +1,81 @@
+body {
+    font-family: 'Inter var', sans-serif;
+    background: #111111;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Terms page specific styles - must override the base body styles */
+body.terms-page {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    display: block !important;
+    position: relative !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.rounded-sm { border-radius: 3px; }
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+.loading-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+.loading-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.06) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.5s infinite;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeIn 0.2s ease-out;
+}
+.upload-container {
+    width: min(92%, 26rem);
+    margin: 0 auto;
+}
+.smooth-transition { transition: all 0.2s ease; }
+.files-container {
+    max-height: 280px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+.files-container::-webkit-scrollbar {
+    width: 4px;
+}
+.files-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+.files-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+@keyframes copyFade {
+    0% { opacity: 0; transform: translateY(4px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-4px); }
+}
+.copy-tooltip {
+    animation: copyFade 1.5s ease-in-out forwards;
+}
