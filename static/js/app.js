@@ -216,11 +216,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     reject(new Error('Network error during upload.'));
                 };
 
-<<<<<<< HEAD
+                // Use your FastAPI backend endpoint here
                 xhr.open('POST', '/upload', true);
-=======
-                xhr.open('POST', 'https://cdn2.verm.dev/v1/upload', true);
->>>>>>> ebde854573f81887de19b4d4bbf18d1e27a37a7a
                 xhr.send(formData);
             });
             
@@ -261,7 +258,6 @@ document.addEventListener('DOMContentLoaded', function() {
             copyBtn.innerHTML = '<i class="bx bx-check text-xs mr-1"></i>Copied';
             
             setTimeout(() => {
-                
                 copyBtn.classList.remove('bg-green-800');
                 copyBtn.classList.add('bg-white/5', 'hover:bg-white/10');
                 copyBtn.innerHTML = originalContent;
@@ -269,7 +265,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    
     const dropZone = document.getElementById('drop-zone');
     
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
