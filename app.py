@@ -41,7 +41,7 @@ async def terms():
 
 @app.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
-    upload_url = "https://cdn2.verm.dev/v1/upload"
+    upload_url = "https://cdn.verm.dev/v1/upload"
     async with httpx.AsyncClient(timeout=None) as client:
         try:
             files_to_upload = {'file': (file.filename, file.file, file.content_type)}
