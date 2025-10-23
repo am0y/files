@@ -216,7 +216,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     reject(new Error('Network error during upload.'));
                 };
 
+<<<<<<< HEAD
                 xhr.open('POST', '/upload', true);
+=======
+                xhr.open('POST', 'https://cdn2.verm.dev/v1/upload', true);
+>>>>>>> ebde854573f81887de19b4d4bbf18d1e27a37a7a
                 xhr.send(formData);
             });
             
